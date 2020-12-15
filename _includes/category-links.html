@@ -1,12 +1,20 @@
 {% comment %}
   Dynamically generate list of links to all category pages
+  site.pages는 _가 붙지 않은 디렉토리의 모든 md, html 파일을 일컫는것 같음
 {% endcomment %}
-{% assign pages_list = site.pages|sort:"sidebar_sort_order" %}
-{% for node in pages_list %}
+
+{% assign main_categories = site.pages | where: "is_main_category", true | sort:"sidebar_sort_order" %}
+{% assign sub_categories = site.pages | where: "is_sub_category", true | sort:"sidebar_sort_order" %}
+
+{% for node in main_categories %}
   {% if node.title != null %}
-    {% if node.layout == "category" %}
-      <a class="category-link {% if page.url == node.url %} active{% endif %}"
-          href="{{ node.url | relative_url }}">{{ node.title }}</a>
-    {% endif %}
+    <a class="category-link {% if page.url == node.url %} active{% endif %}"
+        href="{{ node.url | relative_url }}">{{ node.title }}</a>
+        {% if node.has_sub_category and page.url == node.url %}
+          {% for sub_node in sub_categories %}
+          <a class="category-link {% if page.url == node.url %} active{% endif %}"
+          href="{{ sub_node.url | relative_url }}">{{ sub_node.title }}</a>
+          {% endfor %}
+        {% endif %}
   {% endif %}
 {% endfor %}
