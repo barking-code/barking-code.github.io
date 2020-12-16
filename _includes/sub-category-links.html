@@ -1,0 +1,8 @@
+{% assign sub_categories = site.pages | where: "is_sub_category", true | sort:"sidebar_sort_order" %}
+
+{% for node in sub_categories %}
+  {% if node.title != null and node.category == category %}
+    <a class="category-link {% if page.url == node.url %} active{% endif %}"
+        href="{{ node.url | relative_url }}">--{{ node.title }}</a>
+  {% endif %}
+{% endfor %}

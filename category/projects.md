@@ -1,6 +1,7 @@
 ---
 layout: category
 title: Projects
+category: Projects
 sidebar_sort_order: 1
 is_main_category: true
 ---

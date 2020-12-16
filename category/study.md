@@ -1,5 +1,6 @@
 ---
 layout: category
+category: Study
 title: Study
 sidebar_sort_order: 2
 is_main_category: true
