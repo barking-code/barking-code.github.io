@@ -7,7 +7,7 @@ layout: page
 {% endunless %}
 
 <ul class="posts-list">
-  {% assign sub_categories = site.pages | where: "main_category", page.category | sort:"sidebar_sort_order" %}
+  {% assign sub_categories = site.pages | where: "main_category", page.category | sort:"title" %}
   {% for sub_category in sub_categories %}
     <li>
       <h3>
