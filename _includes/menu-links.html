@@ -1,0 +1,31 @@
+{% comment %}
+  Dynamically generate list of links to all category pages
+  site.pages는 _가 붙지 않은 디렉토리의 모든 md, html 파일을 일컫는다
+  include 사용시 하위 html이 부착되므로 따로 파라미터를 넘겨줄 필요가 없이 하위 html에서 사용 가능
+{% endcomment %}
+
+{% assign menu_nodes = site.pages | where: "is_main_menu", true | sort:"sidebar_sort_order" %}
+{% for node in menu_nodes %}
+  {% assign is_active = false %}
+  {% if node.url == page.url %}  
+    {% assign is_active = true %}
+  {% else %}
+    {% if node.has_sub_menu and node.category == page.main_category %}
+      {% assign is_active = true %}
+    {% else %}
+      {% for category in page.categories %}
+        {% if node.category == category %}
+          {% assign is_active = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+
+  <a class="category-link {% if is_active %} active{% endif %}"
+      href="{{ node.url | relative_url }}">{{ node.title }}</a>
+
+  {% if is_active %}
+  {% assign category = node.category %}
+    {% include sub-menu-links.html %}
+  {% endif %}
+{% endfor %}

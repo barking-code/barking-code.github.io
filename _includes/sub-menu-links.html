@@ -1,8 +1,25 @@
-{% assign sub_menu_node = site.pages | where: "is_sub_menu", true | sort:"sidebar_sort_order" %}
+{% assign sub_menu_nodes = site.pages | where: "is_sub_menu", true | sort:"title" %}
 
+<<<<<<< Updated upstream
 {% for sub_node in sub_menu_node %}
   {% if sub_node.title != null and sub_node.main_category == category %}
     <a class="category-link {% if page.url == sub_node.url %} active{% endif %}"
+=======
+{% for sub_node in sub_menu_nodes %}
+  {% if sub_node.main_category == category %}
+    {% assign is_active = false %}
+    {% if sub_node.url == page.url %}  
+      {% assign is_active = true %}
+    {% else %}
+      {% for category in page.categories %}
+        {% if sub_node.category == category %}
+          {% assign is_active = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    <a class="category-link {% if is_active %} active{% endif %}"
+>>>>>>> Stashed changes
         href="{{ sub_node.url | relative_url }}">└ {{ sub_node.title }}</a>
   {% endif %}
 {% endfor %}
