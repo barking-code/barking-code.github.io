@@ -10,7 +10,7 @@
   {% if node.title != null %}
     <a class="category-link {% if page.url == node.url %} active{% endif %}"
         href="{{ node.url | relative_url }}">{{ node.title }}</a>
-        {% if page.category == node.category %}
+        {% if page.category == node.category or page.main_category == node.category %}
         {% assign category = node.category %}
           {% include sub-menu-links.html %}
         {% endif %}

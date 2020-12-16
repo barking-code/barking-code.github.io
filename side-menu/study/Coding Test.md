@@ -1,9 +1,9 @@
 ---
 layout: sub-category
-title: Java
-sidebar_sort_order: 1
+title: Coding Test
+sidebar_sort_order: 2
 is_sub_menu: true
 
 main_category: Study
-sub_category: java
+sub_category: Coding Test
 ---

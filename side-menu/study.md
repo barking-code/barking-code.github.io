@@ -1,5 +1,5 @@
 ---
-layout: category
+layout: main-category
 title: Study
 is_main_menu: true
 sidebar_sort_order: 2
