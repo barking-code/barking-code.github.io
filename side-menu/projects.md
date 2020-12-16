@@ -6,5 +6,3 @@ sidebar_sort_order: 1
 
 permalink: /projects
 ---
-
-# Projects

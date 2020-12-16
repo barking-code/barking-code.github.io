@@ -18,13 +18,9 @@ author:
   name:           'Hocheol Na'
   repo:           'https://github.com/barking-code'
 
-paginate:         5
-paginate_path:    'projects/page:num'
-
 plugins:
   - jekyll-feed
   - jekyll-gist
-  - jekyll-paginate
 
 # Sidebar link settings
 sidebar_home_link:  true
