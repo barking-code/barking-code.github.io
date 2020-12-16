@@ -4,15 +4,15 @@
   include 사용시 하위 html이 부착되므로 따로 파라미터를 넘겨줄 필요가 없이 하위 html에서 사용 가능
 {% endcomment %}
 
-{% assign main_categories = site.pages | where: "is_main_category", true | sort:"sidebar_sort_order" %}
+{% assign main_menu_nodes = site.pages | where: "is_main_menu", true | sort:"sidebar_sort_order" %}
 
-{% for node in main_categories %}
+{% for node in main_menu_nodes %}
   {% if node.title != null %}
     <a class="category-link {% if page.url == node.url %} active{% endif %}"
         href="{{ node.url | relative_url }}">{{ node.title }}</a>
         {% if page.category == node.category %}
         {% assign category = node.category %}
-          {% include sub-category-links.html %}
+          {% include sub-menu-links.html %}
         {% endif %}
   {% endif %}
 {% endfor %}
