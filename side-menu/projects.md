@@ -1,8 +1,8 @@
 ---
-layout: category
+layout: index
 title: Projects
+is_main_menu: true
 sidebar_sort_order: 1
-is_main_category: true
 ---
 
 ## 제 프로젝트 목록입니다.
