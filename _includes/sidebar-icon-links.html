@@ -1,14 +1,9 @@
 <nav id="sidebar-icon-links">
-  {% if site.hydeout.repo %}
+  {% if site.author.repo %}
     <a id="github-link"
        class="icon" title="Github Project" aria-label="Github Project"
-       href="{{ site.hydeout.repo }}">
+       href="{{ site.author.repo }}">
       {% include svg/github.svg %}
-    </a>
-    <a id="github-download-link"
-       class="icon" title="Download" aria-label="Download"
-       href="{{ site.hydeout.repo }}/archive/v{{ site.hydeout.version }}.zip">
-      {% include svg/download.svg %}
     </a>
   {% endif %}
 
@@ -21,7 +16,7 @@
   {% comment %}
     Check if we have tag or search pages page active before linking to it.
   {% endcomment %}
-  {% assign tags_page = false %}
+  {% assign tags_page = true %}
   {% assign search_page = false %}
   {% for node in site.pages %}
     {% if node.layout == "tags" %}
