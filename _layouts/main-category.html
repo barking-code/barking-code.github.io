@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+{% unless page.content == '' %}
+  {{ content }}
+{% endunless %}
+
+<ul class="posts-list">
+  {% assign sub_categories = site.pages | where: "main_category", page.category | sort:"sidebar_sort_order" %}
+  {% for sub_category in sub_categories %}
+    <li>
+      <h3>
+        <a href="{{ sub_category.url | relative_url }}">
+          {{ sub_category.title }}
+          <small></small>
+        </a>
+      </h3>
+    </li>
+  {% endfor %}
+</ul>

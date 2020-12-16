@@ -3,6 +3,8 @@ layout: page
 title: Cover Letter
 is_main_menu: true
 sidebar_sort_order: 3
+
+permalink: /cover-letter
 ---
 
 자기소개서입니다.

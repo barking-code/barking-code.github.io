@@ -6,7 +6,7 @@ highlighter:      rouge
 title:            barkingCode
 tagline:          'A Jekyll theme'
 description:      '이력서, 메모장'
-url:              https://barking-code.github.io
+url:              'https://barking-code.github.io'
 # baseurl:          '/hydeout'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
@@ -16,16 +16,11 @@ url:              https://barking-code.github.io
 
 author:
   name:           'Hocheol Na'
-  url:            https://barking-code.github.io
-
-paginate:         5
-# paginate_path:    '/page:num'
-                    # Or '/blog/page:num' if you want to move your index pages
+  repo:           'https://github.com/barking-code'
 
 plugins:
   - jekyll-feed
   - jekyll-gist
-  - jekyll-paginate
 
 # Sidebar link settings
 sidebar_home_link:  true
@@ -34,4 +29,4 @@ sidebar_home_link:  true
                                 # set this to the root of the paginate_path
                                 # to enable a separate blog link.
 
-remote_theme: fongandrew/hydeout
+permalink: /:categories/:title

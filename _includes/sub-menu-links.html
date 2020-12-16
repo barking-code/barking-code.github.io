@@ -2,7 +2,7 @@
 
 <<<<<<< Updated upstream
 {% for sub_node in sub_menu_node %}
-  {% if sub_node.title != null and sub_node.category == category %}
+  {% if sub_node.title != null and sub_node.main_category == category %}
     <a class="category-link {% if page.url == sub_node.url %} active{% endif %}"
 =======
 {% for sub_node in sub_menu_nodes %}

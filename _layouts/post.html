@@ -9,8 +9,8 @@ layout: default
   {% include post-meta.html post=page %}
 
   <div class="post-body">
-    {{ content }}
     {% include post-tags.html post=page %}
+    {{ content }}
   </div>
 
   {% include comments.html %}
