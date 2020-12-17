@@ -1,0 +1,32 @@
+---
+layout: page
+---
+
+{% unless page.content == '' %}
+  {{ content }}
+{% endunless %}
+
+<ul class="posts-list">
+  {% assign category = page.category | default: page.title %}
+  
+  {% if site.categories[category] != null %}
+    {% if page.sort_by == "newest" %}
+      {% assign posts = site.categories[category] | sort: "created_at" | reverse %}
+    {% elsif page.sort_by == "oldest" %}
+      {% assign posts = site.categories[category] | sort: "created_at" %}
+    {% else %}
+      {% assign posts = site.categories[category] %}
+    {% endif %}
+  {% endif %}
+
+  {% for post in posts %}
+    <li>
+      <h3>
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title }}
+          <small>{{ post.date | date_to_string }}</small>
+        </a>
+      </h3>
+    </li>
+  {% endfor %}
+</ul>
