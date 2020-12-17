@@ -1,4 +1,4 @@
-{% assign sub_menu_nodes = site.pages | where: "is_sub_menu", true | sort:"title" %}
+{% assign sub_menu_nodes = site.pages | where: "is_sub_menu", true | sort:"sidebar_sort_order" %}
 
 {% for sub_node in sub_menu_nodes %}
   {% if sub_node.main_category == category %}
