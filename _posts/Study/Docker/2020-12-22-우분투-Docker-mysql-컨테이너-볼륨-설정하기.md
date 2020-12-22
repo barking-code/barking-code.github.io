@@ -10,6 +10,7 @@ tags:
   - Cloud
 created_at: 2020-12-22T15:56:00+09:00
 modified_at: 2020-12-22T15:56:00+09:00
+visible: true
 ---
 
 ## Docker 볼륨이란?

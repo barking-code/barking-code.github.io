@@ -11,11 +11,11 @@ layout: page
   
   {% if site.categories[category] != null %}
     {% if page.sort_by == "newest" %}
-      {% assign posts = site.categories[category] | sort: "created_at" | reverse %}
+      {% assign posts = site.categories[category] | where: "visible", true | sort: "created_at" | reverse %}
     {% elsif page.sort_by == "oldest" %}
-      {% assign posts = site.categories[category] | sort: "created_at" %}
+      {% assign posts = site.categories[category] | where: "visible", true | sort: "created_at" %}
     {% else %}
-      {% assign posts = site.categories[category] %}
+      {% assign posts = site.categories[category] | where: "visible", true %}
     {% endif %}
   {% endif %}
 
