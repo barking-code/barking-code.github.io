@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cover Letter
-is_main_menu: true
+is_main_menu: false
 sidebar_sort_order: 100
 
 permalink: /cover-letter
