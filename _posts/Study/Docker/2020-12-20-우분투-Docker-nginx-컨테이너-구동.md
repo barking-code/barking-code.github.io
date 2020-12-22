@@ -10,7 +10,7 @@ tags:
   - Cloud
   - Nginx
 created_at: 2020-12-20T21:12:00+09:00
-modified_at: 2020-12-20T21:12:00+09:00
+modified_at: 2020-12-22T15:56:00+09:00
 ---
 
 ## Docker 컨테이너란?
@@ -71,12 +71,21 @@ aigaret 프로젝트는 다음과 같이 구성되어 있다.
 
      ![image-20201220195547270](../../assets/img/2020-12-20-%EC%9A%B0%EB%B6%84%ED%88%AC-Docker-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B5%AC%EB%8F%99/docker-run.png)
 
-   * 잘 동작하는지 확인해보기
+3. 잘 동작하는지 확인해보기
 
-     ![image-20201220195945703](../../assets/img/2020-12-20-%EC%9A%B0%EB%B6%84%ED%88%AC-Docker-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B5%AC%EB%8F%99/nginx-check.png)
+  * exec 명령어로 컨테이너에 명령을 내릴 수 있다.
 
-     * curl {VM인스턴스 ip 주소}:80 명령어로 요청을 보낸 결과 응답이 잘 오는 것을 확인 할 수 있다.
-     * 443의 경우 개방은 되어있지만 nginx에서 443 포트로 들어오는 요청에 대해 응답을 하고 있지 않기 때문에 설정을 통해 443포트로 들어오는 요청에도 응답하도록 셋팅해야한다. 아래는 리다이렉트로 응답하는지 확인만 할 수 있도록 설정해놓았다.
+    ```bash
+    docker exec -it test bash
+    ```
 
-     ![image-20201220203648539](../../assets/img/2020-12-20-%EC%9A%B0%EB%B6%84%ED%88%AC-Docker-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B5%AC%EB%8F%99/nginx-443-check.png)
+    * -i: 표준 입력 (STDIN)을 개방한다. 설정하지 않는경우 컨테이너에 아무런 값도 전달 할 수 없다.
+    * -t: TTY모드로 접속한다. 설정하지 않는 경우 입력은 가능하지만 결과값이 표시되지 않는다.
+
+  ![image-20201220195945703](../../assets/img/2020-12-20-%EC%9A%B0%EB%B6%84%ED%88%AC-Docker-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B5%AC%EB%8F%99/nginx-check.png)
+
+  * curl {VM인스턴스 ip 주소}:80 명령어로 요청을 보낸 결과 응답이 잘 오는 것을 확인 할 수 있다.
+  * 443의 경우 개방은 되어있지만 nginx에서 443 포트로 들어오는 요청에 대해 응답을 하고 있지 않기 때문에 설정을 통해 443포트로 들어오는 요청에도 응답하도록 셋팅해야한다. 아래는 리다이렉트로 응답하는지 확인만 할 수 있도록 설정해놓았다.
+
+  ![image-20201220203648539](../../assets/img/2020-12-20-%EC%9A%B0%EB%B6%84%ED%88%AC-Docker-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B5%AC%EB%8F%99/nginx-443-check.png)
 
