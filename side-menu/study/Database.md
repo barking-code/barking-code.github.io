@@ -1,12 +1,12 @@
 ---
 layout: post-list
-title: Data Base
+title: Database
 sidebar_sort_order: 2
 is_sub_menu: true
 
 main_category: Study
-category: Data-Base
+category: Database
 sort_by: oldest
 
-permalink: /study/data-base
+permalink: /study/database
 ---
