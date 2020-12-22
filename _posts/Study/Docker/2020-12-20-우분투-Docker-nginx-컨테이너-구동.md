@@ -36,7 +36,7 @@ modified_at: 2020-12-20T21:12:00+09:00
 -----------------------
 
 aigaret 프로젝트는 다음과 같이 구성되어 있다.
-![image-20201221155122936](../../assets/img/2020-12-20-%EC%9A%B0%EB%B6%84%ED%88%AC-Docker-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B5%AC%EB%8F%99/aigaret-구조.png)
+![image-20201222151116109](post_img/2020-12-20-%EC%9A%B0%EB%B6%84%ED%88%AC-Docker-nginx-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B5%AC%EB%8F%99/image-20201222151116109.png)
 
 이 중에서 가장 먼저 nginx컨테이너를 구동해보자.
 

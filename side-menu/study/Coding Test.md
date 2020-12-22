@@ -1,7 +1,7 @@
 ---
 layout: post-list
 title: Coding Test
-sidebar_sort_order: 2
+sidebar_sort_order: 99
 is_sub_menu: true
 
 main_category: Study
