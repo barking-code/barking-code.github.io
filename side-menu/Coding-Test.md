@@ -7,7 +7,7 @@ sidebar_sort_order: 3
 has_sub_menu: true
 category: Coding-Test
 
-permalink: /cording-test
+permalink: /coding-test
 ---
 
 코딩테스트 대비 문제 풀이
