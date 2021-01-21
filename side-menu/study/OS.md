@@ -1,7 +1,7 @@
 ---
 layout: post-list
 title: OS
-sidebar_sort_order: 3
+sidebar_sort_order: 1
 is_sub_menu: true
 
 main_category: Study
