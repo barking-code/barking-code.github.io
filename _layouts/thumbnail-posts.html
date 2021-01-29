@@ -2,4 +2,33 @@
 layout: page
 ---
 
-{{ content }}
+{% unless page.content == '' %}
+  {{ content }}
+{% endunless %}
+
+<div class="card-deck">
+    {% assign category = page.category | default: page.title %}
+  
+    {% if site.categories[category] != null %}
+        {% if page.sort_by == "newest" %}
+            {% assign posts = site.categories[category] | where: "visible", true | sort: "created_at" | reverse %}
+        {% elsif page.sort_by == "oldest" %}
+            {% assign posts = site.categories[category] | where: "visible", true | sort: "created_at" %}
+        {% else %}
+            {% assign posts = site.categories[category] | where: "visible", true %}
+        {% endif %}
+    {% endif %}
+    
+    {% for post in posts %}
+    <div class="card" onClick="location.href='{{ post.url | relative_url }}'">
+        <img class="card-img-top" src="{{ post.thumnail_url }}" alt="{{ post.title }}">
+        <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.summary }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{ post.date | date_to_string }}</small>
+            </div>
+        </div>
+    {% endfor %}
+  </div>
