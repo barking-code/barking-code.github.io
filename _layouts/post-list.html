@@ -6,27 +6,25 @@ layout: page
   {{ content }}
 {% endunless %}
 
-<ul class="posts-list">
-  {% assign category = page.category | default: page.title %}
-  
-  {% if site.categories[category] != null %}
-    {% if page.sort_by == "newest" %}
-      {% assign posts = site.categories[category] | where: "visible", true | sort: "created_at" | reverse %}
-    {% elsif page.sort_by == "oldest" %}
-      {% assign posts = site.categories[category] | where: "visible", true | sort: "created_at" %}
-    {% else %}
-      {% assign posts = site.categories[category] | where: "visible", true %}
-    {% endif %}
+{% assign category = page.category | default: page.title %}
+
+{% if site.categories[category] != null %}
+  {% if page.sort_by == "newest" %}
+    {% assign posts = site.categories[category] | where: "visible", true | sort: "created_at" | reverse %}
+  {% elsif page.sort_by == "oldest" %}
+    {% assign posts = site.categories[category] | where: "visible", true | sort: "created_at" %}
+  {% else %}
+    {% assign posts = site.categories[category] | where: "visible", true %}
   {% endif %}
-  
+{% endif %}
+
+<div class="list-group">
   {% for post in posts %}
-    <li>
-      <h3>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title }}
-          <small>{{ post.date | date_to_string }}</small>
-        </a>
-      </h3>
-    </li>
+  <a href="{{ post.url | relative_url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="my-1">{{ post.title }}</h5>
+      <small class="mt-1">{{ post.date | date_to_string }}</small>
+    </div>
+  </a>
   {% endfor %}
-</ul>
+</div>
