@@ -1,9 +1,7 @@
 ---
-layout: default
-title: Home
+layout: home
+title: Welcome to barkingcode's github page!
 ---
-# Welcome to barkingcode's github page!
-<br/>
 
 안녕하세요 백엔드/서버 개발자 나호철입니다.
 
