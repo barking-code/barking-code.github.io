@@ -5,7 +5,7 @@ categories:
   - Coding-Test
   - Python
 tags:
-  - Djikstra
+  - Dijkstra
   - Priority Queue
 created_at: 2021-03-15T16:08:00+09:00
 modified_at: 2021-03-15T16:08:00+09:00
