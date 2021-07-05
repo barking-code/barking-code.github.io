@@ -24,6 +24,8 @@ title: Welcome to barkingcode's github page!
 
 * 2020.10 ~ 2020.12
   * 엔테크서비스 SW 개발 인턴
+* 2021.05 ~
+  * 폴라리스 오피스 보안사업팀
 
 
 
